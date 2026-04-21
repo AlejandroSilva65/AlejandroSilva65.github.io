@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía F1 2026 — Infografía Interactiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <header class="hero">
+    <div class="hero-label">Temporada revolucionaria</div>
+    <h1 class="hero-title">Fórmula <span>1</span><br><span>2026</span></h1>
+    <p class="hero-sub">
+      La mayor revolución técnica en décadas. Nuevos motores, nueva aerodinámica, 11 equipos y 22 pilotos.
+    </p>
+
+    <div class="story-strip">
+      <button class="story-step active-story" onclick="jumpToSection('weekend', this)">
+        <span class="story-num">01</span>
+        <span class="story-text">Cómo se vive un GP</span>
+      </button>
+      <button class="story-step" onclick="jumpToSection('cambios', this)">
+        <span class="story-num">02</span>
+        <span class="story-text">Qué cambia en 2026</span>
+      </button>
+      <button class="story-step" onclick="jumpToSection('calendario', this)">
+        <span class="story-num">03</span>
+        <span class="story-text">Dónde corre la F1</span>
+      </button>
+      <button class="story-step" onclick="jumpToSection('pilotos', this)">
+        <span class="story-num">04</span>
+        <span class="story-text">Quiénes la protagonizan</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button class="pill active" onclick="show('weekend', this)">Fin de semana</button>
+    <button class="pill" onclick="show('cambios', this)">Cambios 2026</button>
+    <button class="pill" onclick="show('clasificacion', this)">Clasificación</button>
+    <button class="pill" onclick="show('puntos', this)">Puntos</button>
+    <button class="pill" onclick="show('banderas', this)">Banderas</button>
+    <button class="pill" onclick="show('sprint', this)">Sprint</button>
+    <button class="pill" onclick="show('calendario', this)">Calendario</button>
+    <button class="pill" onclick="show('pilotos', this)">Pilotos</button>
+  </nav>
+
+  <section id="weekend" class="sec on">
+    <div class="stitle">El fin de <span>semana</span></div>
+    <p class="sdesc">
+    </p>
+
+    <div class="narrative-flow">
+      <button class="flow-node active-flow" onclick="selectWeekendStage('viernes', this)">Viernes</button>
+      <button class="flow-node" onclick="selectWeekendStage('sabado', this)">Sábado</button>
+      <button class="flow-node" onclick="selectWeekendStage('domingo', this)">Domingo</button>
+    </div>
+
+    <div class="weekend-stage-panel">
+      <div class="weekend-stage-copy">
+        <div id="weekendKicker" class="wkicker">Día 1</div>
+        <h3 id="weekendTitle" class="wtitle">Viernes — Preparación y lectura del circuito</h3>
+        <p id="weekendBody" class="wbody">
+        </p>
+      </div>
+      <div class="weekend-stage-stats">
+        <div class="wstat">
+          <span class="wstat-label">Sesiones</span>
+          <span id="weekendStat1" class="wstat-value">FP1 + FP2</span>
+        </div>
+        <div class="wstat">
+          <span class="wstat-label">Objetivo</span>
+          <span id="weekendStat2" class="wstat-value">Aprender</span>
+        </div>
+        <div class="wstat">
+          <span class="wstat-label">Tensión</span>
+          <span id="weekendStat3" class="wstat-value">Media</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wgrid">
+      <div class="dc v">
+        <div class="dlbl">Día 1</div>
+        <div class="dname">Viernes</div>
+        <div class="ev"><div class="dot"></div>FP1 — Práctica libre 1</div>
+        <div class="ev"><div class="dot"></div>FP2 — Práctica libre 2</div>
+        <p class="day-note">Los pilotos aprenden el circuito, prueban configuraciones y distintos compuestos de neumáticos.</p>
+      </div>
+      <div class="dc s">
+        <div class="dlbl">Día 2</div>
+        <div class="dname">Sábado</div>
+        <div class="ev"><div class="dot"></div>FP3 — Práctica libre 3</div>
+        <div class="ev"><div class="dot"></div>Clasificación Q1 → Q3</div>
+        <p class="day-note">La clasificación define el orden de salida para el domingo. La vuelta más rápida lo es todo.</p>
+      </div>
+      <div class="dc d">
+        <div class="dlbl">Día 3</div>
+        <div class="dname">Domingo</div>
+        <div class="ev"><div class="dot"></div>Carrera principal</div>
+        <p class="day-note">La carrera principal otorga los puntos del campeonato. Duración aprox. 2 horas / 305 km.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cambios" class="sec">
+    <div class="stitle">Revolución <span>2026</span></div>
+    <p class="sdesc">
+    </p>
+
+    <div class="compare-block">
+      <div class="compare-controls">
+        <button class="metric-btn active-metric" onclick="selectMetric('power', this)">Potencia eléctrica</button>
+        <button class="metric-btn" onclick="selectMetric('size', this)">Dimensiones</button>
+        <button class="metric-btn" onclick="selectMetric('weight', this)">Peso</button>
+        <button class="metric-btn" onclick="selectMetric('aero', this)">Aerodinámica</button>
+      </div>
+
+      <div class="compare-panel">
+        <div class="compare-text">
+          <div id="metricKicker" class="compare-kicker">Comparador técnico</div>
+          <h3 id="metricTitle" class="compare-title">Más protagonismo eléctrico</h3>
+          <p id="metricDesc" class="compare-desc">
+            En 2026 el sistema híbrido concede mucho más peso al componente eléctrico, cambiando la entrega de energía y la estrategia de adelantamiento.
+          </p>
+        </div>
+
+        <div class="compare-bars">
+          <div class="compare-row">
+            <div class="compare-label">2025</div>
+            <div class="compare-bar-wrap">
+              <div id="bar2025" class="compare-bar old-bar" style="width: 35%;"></div>
+            </div>
+            <div id="value2025" class="compare-value">160 kW</div>
+          </div>
+
+          <div class="compare-row">
+            <div class="compare-label">2026</div>
+            <div class="compare-bar-wrap">
+              <div id="bar2026" class="compare-bar new-bar" style="width: 78%;"></div>
+            </div>
+            <div id="value2026" class="compare-value">350 kW</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chgrid">
+      <div class="chcard">
+        <div class="chtag">Motor híbrido</div>
+        <div class="chtitle">50% Eléctrico</div>
+        <div class="chdesc">Las nuevas unidades de potencia dividen la energía de forma equitativa entre el motor de combustión y el eléctrico. Potencia eléctrica de 350 kW. Desaparece el MGU-H para simplificar el sistema.</div>
+        <div class="chstat">350 kW</div>
+      </div>
+      <div class="chcard amber">
+        <div class="chtag">Aerodinámica activa</div>
+        <div class="chtitle">Adiós al DRS</div>
+        <div class="chdesc">El DRS tradicional es reemplazado por aerodinámica activa. Modo X en rectas, Modo Z en curvas.</div>
+        <div class="chstat">Modo X/Z</div>
+      </div>
+      <div class="chcard green">
+        <div class="chtag">Combustible</div>
+        <div class="chtitle">100% Sostenible</div>
+        <div class="chdesc">Todos los equipos usarán combustibles 100% renovables. Un paso histórico hacia la sostenibilidad del deporte.</div>
+        <div class="chstat">Net Zero</div>
+      </div>
+      <div class="chcard blue">
+        <div class="chtag">Dimensiones</div>
+        <div class="chtitle">Coches más pequeños</div>
+        <div class="chdesc">Los monoplazas serán 20 cm más cortos y 10 cm más estrechos. Peso mínimo de 768 kg, 30 kg menos.</div>
+        <div class="chstat">−30 kg</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clasificacion" class="sec">
+    <div class="stitle"><span>Clasificación</span> Q1 → Q3</div>
+    <p class="sdesc">
+    </p>
+
+    <div class="qg">
+      <div class="qc" onclick="selQ('q1', this)">
+        <div class="qbig">Q1</div>
+        <div class="qn">Primera fase</div>
+        <div class="qs"><span>Duración</span><span>18 min</span></div>
+        <div class="qs"><span>Participan</span><span>20 pilotos</span></div>
+        <div class="qs"><span>Eliminados</span><span>5 más lentos</span></div>
+        <div class="qs"><span>Define posiciones</span><span>16ª a 20ª</span></div>
+      </div>
+
+      <div class="qc" onclick="selQ('q2', this)">
+        <div class="qbig">Q2</div>
+        <div class="qn">Segunda fase</div>
+        <div class="qs"><span>Duración</span><span>15 min</span></div>
+        <div class="qs"><span>Participan</span><span>15 pilotos</span></div>
+        <div class="qs"><span>Eliminados</span><span>5 más lentos</span></div>
+        <div class="qs"><span>Define posiciones</span><span>11ª a 15ª</span></div>
+      </div>
+
+      <div class="qc" onclick="selQ('q3', this)">
+        <div class="qbig">Q3</div>
+        <div class="qn">Batalla final</div>
+        <div class="qs"><span>Duración</span><span>12 min</span></div>
+        <div class="qs"><span>Participan</span><span>10 pilotos</span></div>
+        <div class="qs"><span>Eliminados</span><span>Ninguno</span></div>
+        <div class="qs"><span>Define posiciones</span><span>1ª a 10ª</span></div>
+      </div>
+    </div>
+
+    <div id="qd" class="qdtl">
+      <h4 id="qdt"></h4>
+      <p id="qdb"></p>
+    </div>
+  </section>
+
+  <section id="puntos" class="sec">
+    <div class="stitle">Sistema de <span>puntos</span></div>
+    <p class="sdesc">
+    </p>
+
+    <div class="points-hero-row">
+      <div class="points-big-card">
+        <div class="points-big-number">25</div>
+        <div class="points-big-copy">Puntos máximos por victoria en carrera principal</div>
+      </div>
+      <div class="points-big-card alt">
+        <div class="points-big-number">8</div>
+        <div class="points-big-copy">Puntos máximos en Sprint</div>
+      </div>
+    </div>
+
+    <div class="ptcont">
+      <div class="pttbl">
+        <div class="tblh">
+          <span class="tblhl">Carrera principal</span>
+          <span class="tbadge bm">Máx 25 pts</span>
+        </div>
+        <div id="mp"></div>
+      </div>
+      <div class="pttbl">
+        <div class="tblh">
+          <span class="tblhl">Sprint</span>
+          <span class="tbadge bs">Máx 8 pts</span>
+        </div>
+        <div id="sp2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="banderas" class="sec">
+    <div class="stitle"><span>Banderas</span> en pista</div>
+    <p class="sdesc">
+    </p>
+
+    <div class="flags-layout">
+      <div class="fg">
+        <div class="fcard active-flag" onclick="selectFlag('yellow', this)">
+          <div class="fsw fy"></div>
+          <div><div class="fn">Amarilla</div><div class="fd">Peligro en pista. Reducir velocidad. Prohibido adelantar.</div></div>
+        </div>
+        <div class="fcard" onclick="selectFlag('green', this)">
+          <div class="fsw fg2"></div>
+          <div><div class="fn">Verde</div><div class="fd">Pista despejada. Se puede continuar a ritmo normal.</div></div>
+        </div>
+        <div class="fcard" onclick="selectFlag('red', this)">
+          <div class="fsw fred"></div>
+          <div><div class="fn">Roja</div><div class="fd">La carrera o sesión queda suspendida inmediatamente.</div></div>
+        </div>
+        <div class="fcard" onclick="selectFlag('black', this)">
+          <div class="fsw fbl"></div>
+          <div><div class="fn">Negra</div><div class="fd">Descalificación. El piloto debe abandonar la prueba.</div></div>
+        </div>
+        <div class="fcard" onclick="selectFlag('blue', this)">
+          <div class="fsw fblue"></div>
+          <div><div class="fn">Azul</div><div class="fd">Un piloto más lento debe ceder el paso a uno más rápido.</div></div>
+        </div>
+        <div class="fcard" onclick="selectFlag('checkered', this)">
+          <div class="fsw fchk"></div>
+          <div><div class="fn">A cuadros</div><div class="fd">Final de la carrera o de la sesión.</div></div>
+        </div>
+      </div>
+
+      <aside class="flag-panel">
+        <div id="flagPreview" class="flag-preview fy"></div>
+        <div class="flag-panel-content">
+          <div class="flag-kicker">Señal seleccionada</div>
+          <h3 id="flagTitle">Bandera amarilla</h3>
+          <p id="flagMeaning">Indica peligro en pista.</p>
+          <div class="flag-tip">
+            <strong>Uso típico:</strong>
+            <span id="flagUsage">Accidente, restos en pista o coche detenido en una zona peligrosa.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="sprint" class="sec">
+    <div class="stitle">Formato <span>Sprint</span></div>
+    <p class="sdesc">
+    </p>
+
+    <div class="spgrid">
+      <div>
+        <div class="sp-stats-row">
+          <div class="stat-h">
+            <div class="stat-n">100</div>
+            <div class="stat-u">Kilómetros</div>
+          </div>
+          <div class="stat-h red">
+            <div class="stat-n red">8</div>
+            <div class="stat-u">Posiciones con puntos</div>
+          </div>
+        </div>
+        <div class="spcard">
+          <div class="sfeat">
+            <div class="sico">⚡</div>
+            <div class="sftext"><strong>Carrera corta</strong>Aprox. 100 km o 30 minutos.</div>
+          </div>
+          <div class="sfeat">
+            <div class="sico">🏁</div>
+            <div class="sftext"><strong>Sin pit stop obligatorio</strong>No hay parada reglamentaria.</div>
+          </div>
+          <div class="sfeat">
+            <div class="sico">📅</div>
+            <div class="sftext"><strong>Se corre el sábado</strong>Antes de la carrera principal.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pttbl">
+        <div class="tblh">
+          <span class="tblhl">Puntos Sprint</span>
+          <span class="tbadge bs">Top 8</span>
+        </div>
+        <div id="spd"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendario" class="sec">
+    <div class="stitle">Calendario <span>2026</span></div>
+    <p class="sdesc">
+    </p>
+
+    <div class="world-map-card">
+      <div class="world-map-header">
+        <div>
+          <div class="world-kicker">Ruta global</div>
+          <h3 class="world-title">La F1 gira por el mundo</h3>
+        </div>
+        <div class="world-badge">21 fechas</div>
+      </div>
+
+      <div class="world-track">
+        <div class="track-line"></div>
+
+        <button class="continent-node active-continent" data-continent="oceania">
+          <span class="node-dot"></span>
+          <span class="node-label">Oceanía</span>
+        </button>
+
+        <button class="continent-node" data-continent="asia">
+          <span class="node-dot"></span>
+          <span class="node-label">Asia</span>
+        </button>
+
+        <button class="continent-node" data-continent="europe">
+          <span class="node-dot"></span>
+          <span class="node-label">Europa</span>
+        </button>
+
+        <button class="continent-node" data-continent="america">
+          <span class="node-dot"></span>
+          <span class="node-label">América</span>
+        </button>
+
+        <button class="continent-node" data-continent="middleeast">
+          <span class="node-dot"></span>
+          <span class="node-label">Medio Oriente</span>
+        </button>
+      </div>
+
+      <div id="continentInfo" class="continent-info">
+        <div class="continent-panel active-panel">
+          <div class="continent-name">Oceanía</div>
+          <div class="continent-desc">La temporada arranca en Australia con la primera parada del recorrido mundial.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calendar-layout">
+      <div class="calendar-left">
+        <div class="callist" id="callist"></div>
+        <div class="circuit-cards-grid" id="circuitCardsGrid"></div>
+      </div>
+
+      <aside class="circuit-panel netflix-panel">
+        <div class="circuit-poster-wrap">
+          <div class="netflix-backdrop" id="netflixBackdrop"></div>
+
+          <img id="circuitImg" class="circuit-img" src="" alt="Circuito seleccionado" />
+          <div id="circuitFallback" class="circuit-fallback">Añade una foto del circuito en ./Images/Circuitos/</div>
+
+          <div class="poster-gradient"></div>
+
+          <div class="poster-overlay-info">
+            <div class="poster-topline">
+              <span id="posterRound" class="poster-round">Ronda 1</span>
+              <span class="poster-separator"></span>
+              <span id="posterDate" class="poster-date">06-08 Mar</span>
+            </div>
+            <h3 id="posterTitle" class="poster-title">Australia</h3>
+            <div id="posterCity" class="poster-city">Melbourne</div>
+          </div>
+        </div>
+
+        <div class="circuit-meta">
+          <div class="circuit-country-row">
+            <div class="circuit-flag-wrap">
+              <img id="circuitFlagImg" class="circuit-flag-img" src="" alt="Bandera del circuito" />
+              <div id="circuitFlagEmoji" class="circuit-flag-emoji">🏁</div>
+            </div>
+            <div>
+              <div class="circuit-kicker">Gran Premio seleccionado</div>
+              <h3 id="circuitTitle">Australia</h3>
+              <div id="circuitSubtitle" class="circuit-subtitle">Melbourne · 06-08 Mar</div>
+            </div>
+          </div>
+
+          <div class="circuit-stats">
+            <div class="circuit-stat">
+              <span class="circuit-stat-label">Longitud</span>
+              <span id="circuitLength" class="circuit-stat-value">5.278 km</span>
+            </div>
+            <div class="circuit-stat">
+              <span class="circuit-stat-label">Vueltas</span>
+              <span id="circuitLaps" class="circuit-stat-value">58</span>
+            </div>
+            <div class="circuit-stat">
+              <span class="circuit-stat-label">País</span>
+              <span id="circuitCountry" class="circuit-stat-value">Australia</span>
+            </div>
+          </div>
+
+          <p id="circuitDesc" class="circuit-desc">
+            Selecciona un Gran Premio para ver su circuito, bandera y datos clave.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="pilotos" class="sec">
+    <div class="stitle">Parrilla <span>2026</span></div>
+    <p class="sdesc">
+    </p>
+
+    <div class="teams-nav" id="tnav"></div>
+    <div class="drv-grid" id="drvgrid"></div>
+  </section>
+
+  <div id="overlay" class="overlay" onclick="handleOverlayClick(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-header">
+        <div class="modal-avatar" id="mavatar"></div>
+        <div>
+          <div class="modal-name" id="mname"></div>
+          <div class="modal-team" id="mteam"></div>
+          <div class="modal-flag-line">
+            <img id="mflag" class="modal-flag-mini" src="" alt="Bandera del piloto" />
+            <span id="mnat" class="modal-nat"></span>
+          </div>
+          <div class="modal-debut" id="mdebut"></div>
+        </div>
+      </div>
+
+      <div class="modal-stats" id="mstats"></div>
+      <div class="modal-bio" id="mbio"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
