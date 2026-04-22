@@ -1178,7 +1178,7 @@ body {
 }
 
 .circuit-cards-grid {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
